@@ -16,19 +16,19 @@ try:
 
     cursor = conexao.cursor()
 
-    sql = 'INSERT INTO alunos (cpf, matricula, id_curso, data_nascimento, nome) VALUES (%s, %s, %s, %s, %s)'
+    sql = 'INSERT INTO alunos (nome, cpf, data_nascimento, email, telefone, data_matricula, id_curso) VALUES (%s, %s, %s, %s, %s, %s, %s)'
     
     valores = [
-        ('00000000000', 000, 1, '10/10/2000', 'Ana'), 
-        ('11111111111', 111, 1, '01/01/2000', 'Bia'), 
-        ('22222222222', 222, 2, '02/02/2000', 'Ceu'), 
-        ('33333333333', 333, 2, '03/03/2000', 'Dea'), 
-        ('44444444444', 444, 3, '04/04/2000', 'Eni'), 
-        ('55555555555', 555, 1, '05/05/2000', 'Fia'), 
-        ('66666666666', 666, 1, '06/06/2000', 'Gio'), 
-        ('77777777777', 777, 2, '07/07/2000', 'Hui'), 
-        ('88888888888', 888, 3, '08/08/2000', 'Ina'), 
-        ('99999999999', 999, 1, '10/10/2000', 'Jil')
+    ('Ana Souza',      '11122233344', '2005-03-14', 'ana@email.com',     '21999990001', '2026-02-01', 1),  # id 1
+    ('Bruno Lima',     '22233344455', '2004-07-22', 'bruno@email.com',   '21999990002', '2026-02-01', 1),  # id 2
+    ('Carla Mendes',   '33344455566', '2003-11-05', 'carla@email.com',   '21999990003', '2026-02-03', 2),  # id 3
+    ('Diego Ferreira', '44455566677', '2006-01-30', 'diego@email.com',   '21999990004', '2026-02-05', 3),  # id 4
+    ('Joana Ribeiro',  '55566677788', '2005-04-21', 'joana@email.com',   '21999990005', '2026-02-07', 1),  # id 5
+    ('Lucas Martins',  '66677788899', '2004-09-10', 'lucas@email.com',   '21999990006', '2026-02-07', 1),  # id 6
+    ('Mariana Costa',  '77788899900', '2003-12-02', 'mariana@email.com', '21999990007', '2026-02-10', 3),  # id 7
+    ('Pedro Alves',    '88899900011', '2006-06-18', 'pedro@email.com',   '21999990008', '2026-02-10', 2),  # id 8
+    ('Rafaela Nunes',  '99900011122', '2005-08-25', 'rafaela@email.com', '21999990009', '2026-02-12', 3),  # id 9
+    ('Thiago Rocha',   '10120230344', '2004-02-14', 'thiago@email.com',  '21999990010', '2026-02-12', 1),  # id 10
     ]
 
     cursor.executemany(sql, valores)

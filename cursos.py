@@ -16,13 +16,13 @@ try:
 
     cursor = conexao.cursor()
 
-    sql = 'INSERT INTO cursos (id_curso, nome_curso, carga_horaria, turno) VALUES (%s, %s, %s, %s)'
+    sql = 'INSERT INTO cursos (nome_curso, carga_horaria, turno) VALUES (%s, %s, %s)'
     
-    valores = [
-        (1, 'Administração', 1000, 'noite'), 
-        (2, 'Enfermagem', 1200, 'tarde'), 
-        (3, 'Informática', 800, 'manhã'), 
-    ]
+    valores =  [
+    ('Informática',    800,  'Manhã'),
+    ('Administração',  1000, 'Noite'),
+    ('Enfermagem',     1200, 'Tarde'),
+]
 
     cursor.executemany(sql, valores)
 

@@ -18,14 +18,15 @@ try:
 
     sql = 'INSERT INTO disciplinas (nome_disciplina, carga_horaria, id_curso) VALUES (%s, %s, %s)'
     
-    valores = [
-        ('introdução_1', 16, 1), 
-    
-        ('introdução_2', 16, 2),
-        
-        ('introdução_3', 16, 3),
-        
-    ]
+    valores =  [
+    # (nome_disciplina, carga_horaria, id_curso)
+    ('Lógica de Programação', 80, 1),  # id 1
+    ('Banco de Dados',        60, 1),  # id 2
+    ('Gestão Financeira',     60, 2),  # id 3
+    ('Marketing',             40, 2),  # id 4
+    ('Anatomia',              80, 3),  # id 5
+    ('Farmacologia',          60, 3),  # id 6
+]
 
     cursor.executemany(sql, valores)
 
